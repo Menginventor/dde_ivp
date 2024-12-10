@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="dde_ivp",
-    version="0.1.0",
+    version="0.1.1",
     author="Dhamdhawach  Horsuwan",
     author_email="meng.inventor@gmail.com",
     description="A package for solving delay differential equations",

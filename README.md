@@ -1,9 +1,11 @@
 # DDE_IVP
 
-[![PyPI version](https://badge.fury.io/py/my_package.svg)](https://badge.fury.io/py/my_package)
+[![PyPI version](https://badge.fury.io/py/dde_ivp.svg)](https://badge.fury.io/py/dde_ivp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Python package for solving Delay Differential Equations (DDEs) with custom event handling and interpolation. This package provides a simple and efficient interface for DDE problems using advanced numerical methods.
+
+Inspired by the **`ddeint`** package, this implementation builds upon `scipy.integrate.solve_ivp`, which offers modern numerical solvers such as `RK23` and `RK45` with adaptive step size. The package also allows configurable maximum step size. (Note: the step size should not exceed the minimum delay to avoid extrapolation and instability).
 
 ---
 
@@ -13,8 +15,10 @@ A Python package for solving Delay Differential Equations (DDEs) with custom eve
 - Event handling for detecting zero-crossings and termination.
 - Built-in support for numerical methods like `RK23` and `RK45`.
 - Compatible with SciPy's `solve_ivp` interface for familiarity.
+- Adaptive step size and configurable maximum step size for precision and stability.
 
 ---
+
 
 ## Installation
 
