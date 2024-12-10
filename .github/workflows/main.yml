@@ -1,0 +1,34 @@
+name: Publish Python Package
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+
+jobs:
+  pypi-publish:
+    name: Upload release to PyPI
+    runs-on: ubuntu-latest
+
+    environment: pypi  # Optional, but recommended for better tracking
+
+    permissions:
+      id-token: write  # Mandatory for OIDC trusted publishing
+      contents: read   # To read the repository contents
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"  # Replace with your preferred Python version
+
+      - name: Build the package
+        run: |
+          pip install --upgrade build
+          python -m build
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
