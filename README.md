@@ -21,7 +21,7 @@ A Python package for solving Delay Differential Equations (DDEs) with custom eve
 Install the package directly from PyPI:
 
 ```bash
-pip install my_package
+pip install dde_ivp
 ```
 
 Or install the latest development version from GitHub:
