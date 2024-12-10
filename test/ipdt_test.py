@@ -14,20 +14,10 @@ Kp = np.pi/2.0*L  # Proportional gain
 R = 1.0
 
 # Define the DDE
-def ipdt_with_p_control(t,Y):
-    # Current output
-    #print(Y)
-    #y = Y(t)
 
-    # Delayed output (due to dead time L)
+def ipdt_with_p_control(t, Y):
     y_delayed = Y(t - L)
-    #print(Y,Y(t))
-
-    #print('y_delayed',y_delayed)
-    # Control action
     u = Kp * (R - y_delayed)
-
-    # Process dynamics
     return (K * u) / T
 
 
