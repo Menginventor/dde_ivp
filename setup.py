@@ -6,6 +6,8 @@ setup(
     author="Dhamdhawach  Horsuwan",
     author_email="meng.inventor@gmail.com",
     description="A package for solving delay differential equations",
+    long_description=open("README.md").read(),  # Read from README.md
+    long_description_content_type="text/markdown",  # Specify Markdown format
     packages=find_packages(),
     install_requires=[
         "numpy",
