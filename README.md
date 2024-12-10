@@ -130,4 +130,4 @@ This package leverages numerical methods and optimizations from SciPy's `solve_i
 
 ## Contact
 
-For questions or feedback, open an issue on the [GitHub repository](https://https://github.com/Menginventor/dde_ivp).
+For questions or feedback, open an issue on the [GitHub repository](https://github.com/Menginventor/dde_ivp).
