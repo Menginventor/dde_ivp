@@ -3,11 +3,18 @@ name: Publish Python Package
 on:
   push:
     branches:
-      - main  # Adjust to the branch you use for releases
+      - main  # Trigger on pushes to the main branch
 
 jobs:
-  build:
+  pypi-publish:
+    name: Upload release to PyPI
     runs-on: ubuntu-latest
+
+    environment: pypi  # Optional, but recommended for better tracking
+
+    permissions:
+      id-token: write  # Mandatory for OIDC trusted publishing
+      contents: read   # To read the repository contents
 
     steps:
       - name: Checkout code
@@ -16,17 +23,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.9"  # Specify your Python version
-
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install build twine
+          python-version: "3.9"  # Replace with your preferred Python version
 
       - name: Build the package
-        run: python -m build
+        run: |
+          pip install --upgrade build
+          python -m build
 
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@v1
-        with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
