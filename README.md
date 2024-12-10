@@ -31,7 +31,7 @@ pip install dde_ivp
 Or install the latest development version from GitHub:
 
 ```bash
-pip install git+https://github.com/yourusername/my_package.git
+pip install git+https://https://github.com/Menginventor/dde_ivp.git
 ```
 
 ---
@@ -44,7 +44,7 @@ Here's an example of solving an IPDT (Integrating Plus Dead Time) model with pro
 
 ```python
 import numpy as np
-from my_package import solve_ddeivp
+from dde_ivp import solve_ddeivp
 import matplotlib.pyplot as plt
 
 # System parameters
@@ -130,4 +130,4 @@ This package leverages numerical methods and optimizations from SciPy's `solve_i
 
 ## Contact
 
-For questions or feedback, open an issue on the [GitHub repository](https://github.com/yourusername/my_package).
+For questions or feedback, open an issue on the [GitHub repository](https://https://github.com/Menginventor/dde_ivp).
