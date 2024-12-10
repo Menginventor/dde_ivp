@@ -1,0 +1,30 @@
+name: Workflow Name  # Name of the workflow (optional)
+
+on:  # Define events that trigger the workflow
+  push:  # Example: Run on every push
+    branches:
+      - main
+  pull_request:  # Example: Run on pull requests to the main branch
+    branches:
+      - main
+
+jobs:  # Define one or more jobs
+  build:  # Job ID
+    runs-on: ubuntu-latest  # Define the environment
+
+    steps:  # Define the sequence of steps for the job
+      - name: Checkout code  # Step name
+        uses: actions/checkout@v3  # Use a predefined action to checkout code
+
+      - name: Set up Python  # Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+
+      - name: Install dependencies  # Install requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests  # Run your test suite
+        run: pytest tests/
